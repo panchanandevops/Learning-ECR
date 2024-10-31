@@ -41,7 +41,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value={{tag}}
+            type=raw,value={{github.ref_name}}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
